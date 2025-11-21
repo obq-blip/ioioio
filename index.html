@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BoardNotes - 激发思考、轻松记录。多功能手写笔记应用（白板、笔记本、PDF阅读标注、思维导图、闪卡、Anki）">
+    <meta name="keywords" content="BoardNotes, BoardNotes官网, BoardNotes下载, BoardNotes官网入口, BoardNotes官网下载, 白板, 笔记本, PDF阅读标注, 思维导图，闪卡，Anki">
+    <meta name="author" content="BoardNotes">
+    <title>BoardNotes官网</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="APP Logo" class="logo-img"> 
+                <span>BoardNotes</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">功能</a></li>
+                <li><a href="#screenshots">截图</a></li>
+                <li><a href="#download">下载</a></li>
+                <li><a href="#support">技术支持</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>欢迎使用BoardNotes</h1>
+            <p>多功能手写笔记应用，激发思考，轻松记录。</p>
+            <a href="https://apps.apple.com/cn/app/boardnotes-%E6%BF%80%E5%8F%91%E6%80%9D%E8%80%83-%E8%BD%BB%E6%9D%BE%E8%AE%B0%E5%BD%95/id6448847544" class="cta-button">立即下载</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>功能特点</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3>白板</h3>
+                <p>白板中特别适合写写画画，碎片化知识的加工处理，做思维导图，进行头脑风暴，提升创造力。</p>
+            </div>
+            <div class="feature-item">
+                <h3>笔记本</h3>
+                <p>笔记本中适合存放已整理归纳的知识，一页一页的笔记方便导出打印。</p>
+            </div>
+            <div class="feature-item">
+                <h3>PDF标注</h3>
+                <p>导入PDF电子书，可以在PDF上手写笔记，高亮标注等。</p>
+            </div>
+            <div class="feature-item">
+                <h3>闪卡</h3>
+                <p>白板、笔记本和PDF中的笔记可以快速制作成闪卡，提升记忆效率。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="screenshots">
+        <h2>应用截图</h2>
+        <div class="screenshot-grid">
+            <img src="001.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="002.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="003.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="004.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="005.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="006.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="007.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="008.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="009.jpg" alt="APP 功能页面截图" class="screenshot">
+            <img src="010.jpg" alt="APP 功能页面截图" class="screenshot">
+        </div>
+    </section>
+
+    <section id="download" class="download">
+        <h2>立即下载</h2>
+        <div class="download-buttons">
+            <a href="https://apps.apple.com/cn/app/boardnotes-%E6%BF%80%E5%8F%91%E6%80%9D%E8%80%83-%E8%BD%BB%E6%9D%BE%E8%AE%B0%E5%BD%95/id6448847544" class="download-button">App Store</a>
+        </div>
+    </section>
+
+    <section id="support" class="support">
+        <h2>技术支持</h2>
+        <div class="feature-list">
+            <p>boardnotes@qq.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BoardNotes. 保留所有权利。</p>
+        <div class="footer-links">
+            <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">渝ICP备2023004780号-3</a>
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=50011302222436" target="_blank">
+                <img src="https://www.beian.gov.cn/img/new/gongan.png" alt="" class="beian-icon">
+                渝公网安备50011302222436
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // 响应式导航栏切换
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // 截图淡入动画
+        const screenshots = document.querySelectorAll('.screenshot');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        screenshots.forEach(screenshot => {
+            observer.observe(screenshot);
+        });
+
+    </script>
+</body>
+</html>
+
+
+<style>
+
+/* styles.css */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 40px; /* 调整 Logo 大小 */
+    height: 40px;
+    margin-right: 10px; /* Logo 和文字之间的间距 */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hero {
+    background: #f5f5f7;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background: #007aff;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #005bb5;
+}
+
+.features {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.screenshots {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f5f5f7;
+}
+
+.screenshots h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.support {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f5f5f7;
+}
+
+.support h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.screenshot-grid {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.screenshot.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.download {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.download h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.download p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-button {
+    background: #007aff;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    margin: 10px;
+    transition: background 0.3s ease;
+}
+
+.download-button:hover {
+    background: #005bb5;
+}
+
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 10px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.beian-icon {
+    width: 16px; /* 调整图标大小 */
+    height: 16px;
+    margin-right: 5px; /* 图标和文字之间的间距 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+
+    .logo-img {
+        width: 30px; /* 在小屏幕上缩小 Logo */
+        height: 30px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .feature-list {
+        flex-direction: column;
+    }
+
+    .screenshot-grid {
+        flex-direction: column;
+    }
+
+    .screenshot {
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-links a {
+        margin: 5px 0;
+    }
+}
+
+
+</style>
