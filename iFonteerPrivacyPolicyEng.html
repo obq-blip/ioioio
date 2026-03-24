@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>iFonteer Privacy Policy | Font Tool App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f5f7fc 0%, #eef2f8 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', 'SF Pro Text', Roboto, 'Noto Sans', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .privacy-container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .privacy-header {
+            background: #0a2540;
+            padding: 2rem 2rem 1.8rem;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(2px);
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.2rem;
+        }
+
+        .app-badge::before {
+            content: "🔒";
+            font-size: 0.9rem;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .update-date {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-date::before {
+            content: "📅";
+            font-size: 0.85rem;
+        }
+
+        .privacy-content {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        .policy-section {
+            margin-bottom: 2.2rem;
+            background: #fefefe;
+            border-radius: 1.5rem;
+            transition: all 0.2s;
+            border: 1px solid #eef2f8;
+            overflow: hidden;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1.1rem 1.5rem;
+            background: #fafcff;
+            border-bottom: 1px solid #eef2f8;
+        }
+
+        .section-icon {
+            font-size: 1.8rem;
+            width: 2.2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0f3b5c;
+            letter-spacing: -0.2px;
+            margin: 0;
+        }
+
+        .section-body {
+            padding: 1.2rem 1.5rem 1.4rem;
+            background: #ffffff;
+        }
+
+        .section-body p {
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            color: #2c3f4f;
+            line-height: 1.55;
+        }
+
+        .section-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: #eef5ff;
+            padding: 0.2rem 0.4rem;
+            border-radius: 10px;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 0.9em;
+            color: #0057a3;
+            font-weight: 500;
+        }
+
+        .code-path {
+            background: #f1f4f8;
+            border-left: 3px solid #3b82f6;
+            padding: 0.6rem 1rem;
+            border-radius: 14px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin: 0.8rem 0;
+            color: #1e3a5f;
+        }
+
+        .external-note {
+            background: #fef6e0;
+            border-radius: 14px;
+            padding: 0.8rem 1rem;
+            margin: 1rem 0 0.2rem;
+            font-size: 0.9rem;
+            border-left: 3px solid #f5a623;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: #eef2ff;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #0f2b3d;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+            border: 1px solid #dce5f0;
+        }
+
+        .contact-email:hover {
+            background: #e0e8fc;
+            border-color: #9bb3d1;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: #6c86a3;
+            border-top: 1px solid #eef2f8;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .privacy-header {
+                padding: 1.5rem;
+            }
+            .privacy-content {
+                padding: 1.2rem 1.2rem 1.8rem;
+            }
+            .section-head {
+                padding: 0.9rem 1.2rem;
+            }
+            .section-body {
+                padding: 1rem 1.2rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        .badge-safe {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e9f4ea;
+            color: #1e6f3f;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="privacy-container">
+    <div class="privacy-header">
+        <div class="app-badge">iFonteer</div>
+        <h1>Privacy Policy</h1>
+        <div class="update-date">Last Updated: March 2026</div>
+        <div style="margin-top: 1rem;">
+            <span class="badge-safe">✓ Zero Collection &nbsp;|&nbsp; Local-First &nbsp;|&nbsp; No Tracking</span>
+        </div>
+    </div>
+
+    <div class="privacy-content">
+        <!-- Section 1: Data Collection -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🔍</div>
+                <div class="section-title">1. Data We Collect</div>
+            </div>
+            <div class="section-body">
+                <p><strong>iFonteer does not collect any personal information.</strong> All font files you import are <span class="highlight">stored only locally on your device</span> and are never uploaded to any server. We do not require you to create an account, provide an email address, or any other identifiers, nor do we remotely collect device information or usage data.</p>
+                <p>Font files always stay on your device and remain entirely under your control. No data leaves your device without your explicit action.</p>
+            </div>
+        </div>
+
+        <!-- Section 2: Local Storage -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">💾</div>
+                <div class="section-title">2. Local Storage</div>
+            </div>
+            <div class="section-body">
+                <p>All font files are saved in the App’s <span class="highlight">Documents directory</span> using the standard iOS sandbox mechanism, which prevents other apps from accessing your fonts. You can manage them at any time within the app, <strong>supporting single deletion</strong>.</p>
+                <div class="code-path">📁 iFonteer/Documents/  —  Your font library is stored exclusively here</div>
+                <p>When you uninstall iFonteer, the system automatically removes all related data, leaving no residual files. We do not sync your font library to external storage or iCloud unless you manually back it up via the iOS Files app — a process initiated solely by you.</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Local Network Usage -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🌐</div>
+                <div class="section-title">3. Local Network Usage</div>
+            </div>
+            <div class="section-body">
+                <p>iFonteer uses a <strong>local HTTP server (localhost‑only)</strong> to serve font configuration profiles to iOS Safari. This server runs exclusively on your device and does not expose any data to the external network or listen on public interfaces.</p>
+                <p>The local server exists solely to help you install or preview font profiles within Safari. The entire process occurs internally on your device, generates no internet traffic, and never transmits any data to third parties. Even if your device is connected to public Wi‑Fi, the service remains accessible only to the local loopback address (127.0.0.1) — it is secure and private by design.</p>
+            </div>
+        </div>
+
+        <!-- Section 4: Third‑Party Services -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🚫</div>
+                <div class="section-title">4. Third‑Party Services</div>
+            </div>
+            <div class="section-body">
+                <p><strong>iFonteer does not integrate any analytics, advertising, crash reporting, or other third‑party tracking services.</strong> No Google Analytics, Firebase, Crashlytics, Facebook SDK, or any other statistical tools are present. This means your actions, font preferences, and usage patterns are never disclosed to any third party.</p>
+                <p>We believe privacy is a fundamental right, which is why we architecturally exclude all telemetry components. </p>
+            </div>
+        </div>
+
+        <!-- Section 5: Font Websites -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🔗</div>
+                <div class="section-title">5. Font Websites</div>
+            </div>
+            <div class="section-body">
+                <p>The font websites listed within the app are external links provided to help you discover open‑source or licensed font resources. iFonteer is not responsible for the content, downloads, or privacy practices of these websites.</p>
+                <div class="external-note">
+                    ⚠️ Please note: when you tap a third‑party font website, you leave the iFonteer environment. We encourage you to review the privacy policies and terms of use for those sites. This Privacy Policy applies solely to the iFonteer app itself and not to any external services or links.
+                </div>
+                <p style="margin-top: 12px;">We curate the font websites shown, but cannot guarantee real‑time changes in third‑party behavior. You decide whether to download fonts from these sites; once downloaded, font files are saved either to a location you choose via the Files app or directly imported into iFonteer for local management.</p>
+            </div>
+        </div>
+
+        <!-- Section 6: Contact Us -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">✉️</div>
+                <div class="section-title">6. Contact Us</div>
+            </div>
+            <div class="section-body">
+                <p>If you have any questions about this Privacy Policy or would like more details about how your data is handled, please feel free to reach out to us via the email address below:</p>
+                <a href="mailto:boardnotes@qq.com" class="contact-email">boardnotes@qq.com</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">We are committed to responding to every privacy‑related inquiry within 7 business days. Because we do not collect any personal information, you do not need to worry about additional data leakage when contacting us, though we still recommend avoiding sharing overly sensitive personal details in your email.</p>
+            </div>
+        </div>
+
+        <!-- Transparency summary (no new data practices, just reaffirming) -->
+        <div style="background: #F8FAFE; border-radius: 1.2rem; padding: 0.8rem 1.2rem; margin-top: 0.5rem; border: 1px solid #e6edf4;">
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="font-size: 1.4rem;">🛡️</span>
+                <div style="font-size: 0.85rem; color: #2c4c6e;">
+                    <strong>Privacy Promise:</strong> iFonteer is built on a “no‑trace, local, transparent” philosophy. The app has no network data transmission capabilities (except for the localhost‑only profile service), contains no trackers, and collects zero personal data. Your fonts belong to you — always.
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <span>© 2026 iFonteer Team · All rights reserved</span><br>
+            <span style="opacity: 0.6;">This Privacy Policy is effective as of March 2026. Any updates will be published on this page.</span>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

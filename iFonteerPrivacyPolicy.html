@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>iFonteer 隐私政策 | 字体工具应用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f5f7fc 0%, #eef2f8 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', 'SF Pro Text', Roboto, 'Noto Sans', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        /* 优雅主容器 */
+        .privacy-container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        /* 头部装饰 */
+        .privacy-header {
+            background: #0a2540;
+            padding: 2rem 2rem 1.8rem;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(2px);
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.2rem;
+        }
+
+        .app-badge::before {
+            content: "🔒";
+            font-size: 0.9rem;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .update-date {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-date::before {
+            content: "📅";
+            font-size: 0.85rem;
+        }
+
+        /* 内容主体 */
+        .privacy-content {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        /* 卡片风格章节 */
+        .policy-section {
+            margin-bottom: 2.2rem;
+            background: #fefefe;
+            border-radius: 1.5rem;
+            transition: all 0.2s;
+            border: 1px solid #eef2f8;
+            overflow: hidden;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1.1rem 1.5rem;
+            background: #fafcff;
+            border-bottom: 1px solid #eef2f8;
+        }
+
+        .section-icon {
+            font-size: 1.8rem;
+            width: 2.2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0f3b5c;
+            letter-spacing: -0.2px;
+            margin: 0;
+        }
+
+        .section-body {
+            padding: 1.2rem 1.5rem 1.4rem;
+            background: #ffffff;
+        }
+
+        .section-body p {
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            color: #2c3f4f;
+            line-height: 1.55;
+        }
+
+        .section-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: #eef5ff;
+            padding: 0.2rem 0.4rem;
+            border-radius: 10px;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 0.9em;
+            color: #0057a3;
+            font-weight: 500;
+        }
+
+        .code-path {
+            background: #f1f4f8;
+            border-left: 3px solid #3b82f6;
+            padding: 0.6rem 1rem;
+            border-radius: 14px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin: 0.8rem 0;
+            color: #1e3a5f;
+        }
+
+        .external-note {
+            background: #fef6e0;
+            border-radius: 14px;
+            padding: 0.8rem 1rem;
+            margin: 1rem 0 0.2rem;
+            font-size: 0.9rem;
+            border-left: 3px solid #f5a623;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: #eef2ff;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #0f2b3d;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+            border: 1px solid #dce5f0;
+        }
+
+        .contact-email:hover {
+            background: #e0e8fc;
+            border-color: #9bb3d1;
+            text-decoration: none;
+        }
+
+        hr {
+            margin: 1rem 0 0.5rem;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #e2e8f0, transparent);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: #6c86a3;
+            border-top: 1px solid #eef2f8;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .privacy-header {
+                padding: 1.5rem;
+            }
+            .privacy-content {
+                padding: 1.2rem 1.2rem 1.8rem;
+            }
+            .section-head {
+                padding: 0.9rem 1.2rem;
+            }
+            .section-body {
+                padding: 1rem 1.2rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* 小点缀 */
+        .badge-safe {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e9f4ea;
+            color: #1e6f3f;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="privacy-container">
+    <div class="privacy-header">
+        <div class="app-badge">iFonteer</div>
+        <h1>隐私政策</h1>
+        <div class="update-date">最后更新：2026 年 3 月</div>
+        <div style="margin-top: 1rem;">
+            <span class="badge-safe">✓ 零收集 &nbsp;|&nbsp; 本地优先 &nbsp;|&nbsp; 无追踪</span>
+        </div>
+    </div>
+
+    <div class="privacy-content">
+        <!-- 第1节 收集的数据 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🔍</div>
+                <div class="section-title">1. 我们收集的数据</div>
+            </div>
+            <div class="section-body">
+                <p><strong>iFonteer 不收集任何个人信息。</strong> 您导入的所有字体文件<span class="highlight">仅保存在您的设备本地</span>，不会上传至任何服务器。我们不会要求您创建账户、提供邮箱地址或任何其他身份标识，也不会通过任何方式远程收集设备信息或使用数据。</p>
+                <p>字体文件始终留在您的设备上，完全由您控制。未经您的明确操作，没有任何数据会离开您的设备。</p>
+            </div>
+        </div>
+
+        <!-- 第2节 本地存储 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">💾</div>
+                <div class="section-title">2. 本地存储</div>
+            </div>
+            <div class="section-body">
+                <p>所有字体文件均保存在 App 的 <span class="highlight">Documents 目录</span> 中，采用 iOS 标准沙盒存储机制，其他应用无法访问您的字体文件。您可以随时在 App 内进行管理，<strong>支持单个删除</strong>。</p>
+                <div class="code-path">📁 iFonteer/Documents/  —  您的字体库仅存于此目录</div>
+                <p>当您卸载 iFonteer 时，系统会自动清除所有相关数据，不留任何残留文件。我们不会在外部存储或 iCloud 中同步您的字体库（除非您手动通过 iOS 文件应用备份，但此操作由您主动触发）。</p>
+            </div>
+        </div>
+
+        <!-- 第3节 本地网络使用 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🌐</div>
+                <div class="section-title">3. 本地网络使用</div>
+            </div>
+            <div class="section-body">
+                <p>iFonteer 使用一个<strong>本地 HTTP 服务器（仅限 localhost 访问）</strong>向 iOS Safari 提供字体配置描述文件。该服务器仅在您的设备上运行，不会将任何数据暴露给外部网络，也不会监听公共网络接口。</p>
+                <p>本地服务器的用途是为了方便您在 Safari 中安装或预览字体描述文件，整个过程完全在设备内部完成，不会产生互联网流量，也不会有任何数据被传输到第三方。即使设备连接了公共 Wi-Fi，该服务依然仅对本地回环地址 (127.0.0.1) 可见，安全且私密。</p>
+            </div>
+        </div>
+
+        <!-- 第4节 第三方服务 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🚫</div>
+                <div class="section-title">4. 第三方服务</div>
+            </div>
+            <div class="section-body">
+                <p><strong>iFonteer 不集成任何数据分析、广告、崩溃上报或其他第三方追踪服务。</strong> 没有 Google Analytics、Firebase、Crashlytics、Facebook SDK 或其他统计工具。这意味着您的任何操作习惯、字体偏好、使用频率均不会被任何第三方获知。</p>
+                <p>我们相信隐私是基本权利，因此从架构上避免所有遥测组件。</p>
+            </div>
+        </div>
+
+        <!-- 第5节 字体网站 外部链接 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🔗</div>
+                <div class="section-title">5. 字体网站</div>
+            </div>
+            <div class="section-body">
+                <p>应用内列出的字体网站为外部链接，方便您寻找开源或正版字体资源。iFonteer 对这些网站的内容、下载源以及隐私政策不负责任。</p>
+                <div class="external-note">
+                    ⚠️ 请注意：当您点击第三方字体网站时，您将离开 iFonteer 应用环境。我们建议您查阅相应网站的隐私政策及使用条款。本隐私政策仅适用于 iFonteer 应用本体，不适用于任何外部服务或链接。
+                </div>
+                <p style="margin-top: 12px;">我们展示的字体网站均经过筛选，但无法保证第三方行为的实时变化。您自主决定是否从这些网站下载字体，下载后字体文件同样只保存在您通过“文件”应用选择的路径或直接导入 iFonteer 后变为本地管理。</p>
+            </div>
+        </div>
+
+        <!-- 第6节 联系我们 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">✉️</div>
+                <div class="section-title">6. 联系我们</div>
+            </div>
+            <div class="section-body">
+                <p>如您对本隐私政策有任何疑问，或希望了解更多关于数据处理的细节，请随时通过以下邮箱与我们取得联系：</p>
+                <a href="mailto:boardnotes@qq.com" class="contact-email">boardnotes@qq.com</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">我们承诺在 7 个工作日内认真回复您的每一条隐私相关咨询。由于我们不收集任何个人信息，您无需担心提供邮箱会造成额外数据泄露，但我们仍建议您在邮件中避免透露过多敏感身份信息。</p>
+            </div>
+        </div>
+
+        <!-- 补充安全透明说明 (额外增强但符合原文精神，不引入新数据收集描述) -->
+        <div style="background: #F8FAFE; border-radius: 1.2rem; padding: 0.8rem 1.2rem; margin-top: 0.5rem; border: 1px solid #e6edf4;">
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="font-size: 1.4rem;">🛡️</span>
+                <div style="font-size: 0.85rem; color: #2c4c6e;">
+                    <strong>隐私承诺总结：</strong> iFonteer 设计原则为 “无痕·本地·透明”。应用不具备网络数据传输能力（除了仅限本地回环的描述文件服务），无追踪器，无个人数据采集。您的字体文件所有权完全属于您。
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <span>© 2026 iFonteer 团队 · 保留所有权利</span><br>
+            <span style="opacity: 0.6;">本隐私政策自 2026 年 3 月起生效，如有更新将在此页面发布。</span>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

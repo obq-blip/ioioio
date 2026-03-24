@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>iFonteer 隱私權政策 | 字型工具 App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f5f7fc 0%, #eef2f8 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', 'SF Pro Text', Roboto, 'Noto Sans', 'PingFang TC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .privacy-container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .privacy-header {
+            background: #0a2540;
+            padding: 2rem 2rem 1.8rem;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(2px);
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.2rem;
+        }
+
+        .app-badge::before {
+            content: "🔒";
+            font-size: 0.9rem;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .update-date {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-date::before {
+            content: "📅";
+            font-size: 0.85rem;
+        }
+
+        .privacy-content {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        .policy-section {
+            margin-bottom: 2.2rem;
+            background: #fefefe;
+            border-radius: 1.5rem;
+            transition: all 0.2s;
+            border: 1px solid #eef2f8;
+            overflow: hidden;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1.1rem 1.5rem;
+            background: #fafcff;
+            border-bottom: 1px solid #eef2f8;
+        }
+
+        .section-icon {
+            font-size: 1.8rem;
+            width: 2.2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0f3b5c;
+            letter-spacing: -0.2px;
+            margin: 0;
+        }
+
+        .section-body {
+            padding: 1.2rem 1.5rem 1.4rem;
+            background: #ffffff;
+        }
+
+        .section-body p {
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            color: #2c3f4f;
+            line-height: 1.55;
+        }
+
+        .section-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: #eef5ff;
+            padding: 0.2rem 0.4rem;
+            border-radius: 10px;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 0.9em;
+            color: #0057a3;
+            font-weight: 500;
+        }
+
+        .code-path {
+            background: #f1f4f8;
+            border-left: 3px solid #3b82f6;
+            padding: 0.6rem 1rem;
+            border-radius: 14px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin: 0.8rem 0;
+            color: #1e3a5f;
+        }
+
+        .external-note {
+            background: #fef6e0;
+            border-radius: 14px;
+            padding: 0.8rem 1rem;
+            margin: 1rem 0 0.2rem;
+            font-size: 0.9rem;
+            border-left: 3px solid #f5a623;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: #eef2ff;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #0f2b3d;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+            border: 1px solid #dce5f0;
+        }
+
+        .contact-email:hover {
+            background: #e0e8fc;
+            border-color: #9bb3d1;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: #6c86a3;
+            border-top: 1px solid #eef2f8;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .privacy-header {
+                padding: 1.5rem;
+            }
+            .privacy-content {
+                padding: 1.2rem 1.2rem 1.8rem;
+            }
+            .section-head {
+                padding: 0.9rem 1.2rem;
+            }
+            .section-body {
+                padding: 1rem 1.2rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        .badge-safe {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e9f4ea;
+            color: #1e6f3f;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="privacy-container">
+    <div class="privacy-header">
+        <div class="app-badge">iFonteer</div>
+        <h1>隱私權政策</h1>
+        <div class="update-date">最後更新：2026 年 3 月</div>
+        <div style="margin-top: 1rem;">
+            <span class="badge-safe">✓ 零收集 &nbsp;|&nbsp; 本機優先 &nbsp;|&nbsp; 無追蹤</span>
+        </div>
+    </div>
+
+    <div class="privacy-content">
+        <!-- 第1節 收集的資料 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🔍</div>
+                <div class="section-title">1. 我們收集的資料</div>
+            </div>
+            <div class="section-body">
+                <p><strong>iFonteer 不收集任何個人資訊。</strong> 您匯入的所有字型檔案<span class="highlight">僅儲存在您的裝置本機</span>，絕不會上傳至任何伺服器。我們不需要您建立帳戶、提供電子郵件地址或任何其他識別資訊，也不會透過任何方式遠端收集裝置資訊或使用數據。</p>
+                <p>字型檔案始終保留在您的裝置上，完全由您掌控。未經您的明確操作，沒有任何資料會離開您的裝置。</p>
+            </div>
+        </div>
+
+        <!-- 第2節 本機儲存 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">💾</div>
+                <div class="section-title">2. 本機儲存</div>
+            </div>
+            <div class="section-body">
+                <p>所有字型檔案均儲存在 App 的 <span class="highlight">Documents 目錄</span> 中，採用 iOS 標準沙盒機制，其他應用程式無法存取您的字型。您可以隨時在 App 內進行管理，<strong>支援單一刪除</strong>。</p>
+                <div class="code-path">📁 iFonteer/Documents/  —  您的字型庫僅存放於此目錄</div>
+                <p>當您解除安裝 iFonteer 時，系統會自動清除所有相關資料，不留任何殘留檔案。我們不會將您的字型庫同步至外部儲存空間或 iCloud（除非您透過 iOS 的「檔案」應用程式手動備份，而此操作完全由您主動觸發）。</p>
+            </div>
+        </div>
+
+        <!-- 第3節 本機網路使用 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🌐</div>
+                <div class="section-title">3. 本機網路使用</div>
+            </div>
+            <div class="section-body">
+                <p>iFonteer 使用一個<strong>本機 HTTP 伺服器（僅限 localhost 存取）</strong>向 iOS Safari 提供字型設定描述檔。該伺服器僅在您的裝置上執行，不會將任何資料暴露給外部網路，也不會監聽公共網路介面。</p>
+                <p>本機伺服器的用途是協助您在 Safari 中安裝或預覽字型描述檔，整個過程完全在裝置內部完成，不會產生網際網路流量，也不會將任何資料傳輸至第三方。即使裝置連接到公共 Wi-Fi，該服務依然僅對本機回送位址 (127.0.0.1) 可見，安全且保有隱私。</p>
+            </div>
+        </div>
+
+        <!-- 第4節 第三方服務 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🚫</div>
+                <div class="section-title">4. 第三方服務</div>
+            </div>
+            <div class="section-body">
+                <p><strong>iFonteer 未整合任何數據分析、廣告、崩潰回報或其他第三方追蹤服務。</strong> 沒有 Google Analytics、Firebase、Crashlytics、Facebook SDK 或其他統計工具。這表示您的任何操作習慣、字型偏好、使用頻率均不會被任何第三方知悉。</p>
+                <p>我們相信隱私是基本權利，因此從架構上排除所有遙測元件。</p>
+            </div>
+        </div>
+
+        <!-- 第5節 字型網站 外部連結 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">🔗</div>
+                <div class="section-title">5. 字型網站</div>
+            </div>
+            <div class="section-body">
+                <p>應用程式內列出的字型網站為外部連結，方便您尋找開源或合法授權的字型資源。iFonteer 對這些網站的內容、下載來源以及隱私權政策不負任何責任。</p>
+                <div class="external-note">
+                    ⚠️ 請注意：當您點擊第三方字型網站時，您將離開 iFonteer 應用程式環境。我們建議您查閱該網站的隱私權政策及使用條款。本隱私權政策僅適用於 iFonteer 應用程式本身，不適用於任何外部服務或連結。
+                </div>
+                <p style="margin-top: 12px;">我們所展示的字型網站均經過篩選，但無法保證第三方行為的即時變動。您可自行決定是否從這些網站下載字型，下載後的字型檔案將儲存於您透過「檔案」應用程式選擇的位置，或直接匯入 iFonteer 後轉為本機管理。</p>
+            </div>
+        </div>
+
+        <!-- 第6節 聯絡我們 -->
+        <div class="policy-section">
+            <div class="section-head">
+                <div class="section-icon">✉️</div>
+                <div class="section-title">6. 聯絡我們</div>
+            </div>
+            <div class="section-body">
+                <p>如您對本隱私權政策有任何疑問，或希望進一步了解資料處理的細節，歡迎透過以下電子郵件與我們聯繫：</p>
+                <a href="mailto:boardnotes@qq.com" class="contact-email">boardnotes@qq.com</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">我們承諾在 7 個工作日內認真回覆每一則與隱私相關的詢問。由於我們不收集任何個人資訊，您無需擔心提供電子郵件會造成額外的資料外洩，但我們仍建議您在郵件中避免透露過多敏感的個人身份資訊。</p>
+            </div>
+        </div>
+
+        <!-- 隱私承諾總結 -->
+        <div style="background: #F8FAFE; border-radius: 1.2rem; padding: 0.8rem 1.2rem; margin-top: 0.5rem; border: 1px solid #e6edf4;">
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="font-size: 1.4rem;">🛡️</span>
+                <div style="font-size: 0.85rem; color: #2c4c6e;">
+                    <strong>隱私承諾總結：</strong> iFonteer 的設計理念為「無痕·本機·透明」。應用程式不具備網路資料傳輸能力（除了僅限本機回送的描述檔服務），無追蹤器，不收集任何個人資料。您的字型檔案所有權完全屬於您。
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <span>© 2026 iFonteer 團隊 · 保留所有權利</span><br>
+            <span style="opacity: 0.6;">本隱私權政策自 2026 年 3 月起生效，如有更新將在此頁面發布。</span>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
+```
