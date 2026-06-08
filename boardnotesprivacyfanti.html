@@ -39,19 +39,6 @@
             min-height: 100vh;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #4f6ef7 0%, #6d8cf8 30%, #a78bfa 60%, #4f6ef7 100%);
-            background-size: 200% 100%;
-            animation: gradientShift 6s ease-in-out infinite;
-            z-index: 100;
-        }
-
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
