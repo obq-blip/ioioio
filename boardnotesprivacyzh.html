@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - BoardNotes</title>
+    <style>
+        :root {
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-muted: #6b7280;
+            --accent: #4f6ef7;
+            --accent-light: #eef1ff;
+            --border: #e5e7eb;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --font-mono: "SF Mono", "Menlo", "Monaco", "Consolas", "PingFang SC", monospace;
+            --line-height: 1.75;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: var(--line-height);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4f6ef7 0%, #6d8cf8 30%, #a78bfa 60%, #4f6ef7 100%);
+            background-size: 200% 100%;
+            animation: gradientShift 6s ease-in-out infinite;
+            z-index: 100;
+        }
+
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px 0 60px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 48px 32px 36px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 0 0 6px 6px;
+        }
+
+        .app-icon {
+            display: inline-block;
+            width: 72px;
+            height: 72px;
+            background: var(--accent-light);
+            border-radius: 18px;
+            margin-bottom: 20px;
+            line-height: 72px;
+            font-size: 36px;
+            box-shadow: 0 4px 12px rgba(79, 110, 247, 0.18);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header .meta {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 6px 16px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            padding: 36px 32px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .content-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .content-card h2 {
+            font-size: 20px;
+            font-weight: 650;
+            color: #111827;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f3f4f6;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-card h2 .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--accent-light);
+            font-size: 17px;
+            flex-shrink: 0;
+        }
+
+        .content-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            letter-spacing: -0.1px;
+        }
+
+        .content-card p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .content-card ul,
+        .content-card ol {
+            margin: 8px 0 18px 4px;
+            padding-left: 20px;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .content-card ul li,
+        .content-card ol li {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        .content-card ul li::marker {
+            color: var(--accent);
+        }
+
+        .highlight-box {
+            background: #fefce8;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 14px 18px;
+            margin: 18px 0;
+            font-size: 14px;
+            color: #92400e;
+            line-height: 1.7;
+        }
+
+        .highlight-box.info {
+            background: #eff6ff;
+            border-left-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .highlight-box.safe {
+            background: #f0fdf4;
+            border-left-color: #22c55e;
+            color: #166534;
+        }
+
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+        }
+
+        .data-table-wrap {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 500px;
+        }
+
+        table thead th {
+            background: #f9fafb;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+            font-size: 13px;
+            letter-spacing: 0.2px;
+            border-bottom: 2px solid var(--border);
+            white-space: nowrap;
+        }
+
+        table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f3f4f6;
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        table tbody tr:hover {
+            background: #fafbfc;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .badge-green {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .badge-yellow {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .badge-gray {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 28px 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #3b5de7;
+            text-decoration: underline;
+        }
+
+        .footer .divider {
+            display: inline-block;
+            margin: 0 8px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 10px 0 40px;
+            }
+            .header {
+                padding: 32px 20px 28px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .content-card {
+                padding: 24px 18px;
+            }
+            .content-card h2 {
+                font-size: 18px;
+            }
+            .content-card p,
+            .content-card ul,
+            .content-card ol {
+                font-size: 14px;
+            }
+            table {
+                font-size: 12px;
+            }
+            table thead th,
+            table tbody td {
+                padding: 10px 12px;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            body::before {
+                display: none;
+            }
+            .content-card {
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+                break-inside: avoid;
+            }
+            .content-card:hover {
+                box-shadow: none;
+            }
+            .header {
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="app-icon">📝</div>
+            <h1>BoardNotes 隐私政策</h1>
+            <p class="subtitle">手写笔记应用 · 隐私至上</p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="icon">📋</span>引言</h2>
+            <p>
+                感谢您使用 <strong>BoardNotes</strong>（以下简称"本应用"或"我们"）。我们深知个人隐私的重要性，并致力于保护您的信息安全。本隐私政策旨在向您清晰地说明我们如何收集、使用、存储和保护您的数据。
+            </p>
+            <p>
+                请仔细阅读本隐私政策。一旦您开始使用本应用，即表示您已充分理解并同意本政策中描述的全部内容。如果您不同意本政策的任何条款，请停止使用本应用。
+            </p>
+            <div class="highlight-box info">
+                <strong>💡 核心承诺</strong>
+                BoardNotes 的设计理念是<strong>最小化数据收集</strong>。我们不会要求您注册账号、提供手机号或邮箱地址，您的笔记数据始终由您掌控。
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔍</span>我们收集的信息</h2>
+            <p>
+                本应用遵循"数据最小化"原则。以下详细列出了我们收集、不收集以及可能由第三方收集的信息类型：
+            </p>
+
+            <h3>1. 我们不收集的信息</h3>
+            <ul>
+                <li><strong>个人身份信息：</strong>我们不收集您的手机号码、电子邮箱地址、姓名、身份证号、家庭住址等任何可直接或间接识别您个人身份的信息。</li>
+                <li><strong>账号注册信息：</strong>本应用无需注册账号，不设账号密码体系，因此不存在账号相关信息的收集。</li>
+                <li><strong>笔记内容：</strong>您的所有手写笔记、导入的文档、标注等内容均存储在您的设备本地及您个人的 iCloud 账户中，我们<strong>不会</strong>将这些内容上传至我们的服务器，也无法访问这些内容。</li>
+                <li><strong>位置信息：</strong>我们不收集您的精确或大致地理位置信息。</li>
+                <li><strong>通讯录与相册：</strong>除非您主动选择导入图片到笔记中（此时仅由系统级接口在您的授权下读取选定图片），我们不会扫描或收集您的通讯录和相册内容。</li>
+            </ul>
+
+            <h3>2. 自动绑定的信息 — iCloud 账户</h3>
+            <p>
+                本应用会自动与您设备上登录的 <strong>iCloud 账户</strong>进行绑定。此绑定仅用于通过 Apple 的 iCloud 同步服务实现数据在多设备间的同步。具体而言：
+            </p>
+            <ul>
+                <li>我们利用 Apple 提供的 <strong>iCloud Drive</strong> 或 <strong>CloudKit</strong> 框架，将您的笔记数据存储在您个人的 iCloud 存储空间中。</li>
+                <li>登录<strong>同一个 iCloud 账号</strong>的 iOS 设备之间，笔记数据会自动同步。这一过程完全通过 Apple 的 iCloud 基础设施完成，我们无权访问传输中的数据或存储在 iCloud 中的笔记内容。</li>
+                <li>我们可能会获取到 iCloud 账户关联的<strong>匿名标识符</strong>（如 CloudKit 记录的用户标识），该标识符仅用于区分不同的同步容器，不与您的个人身份信息关联。</li>
+            </ul>
+
+            <div class="highlight-box safe">
+                <strong>🔒 您的数据由 Apple iCloud 保护</strong>
+                iCloud 同步采用端到端加密技术（在支持的情况下）。您的笔记数据在传输和云端存储过程中均受到 Apple 安全机制的保护。我们作为开发者，无法解密或查看您的 iCloud 数据。
+            </div>
+
+            <h3>3. 第三方可能收集的信息</h3>
+            <p>本应用集成了以下第三方服务，它们可能按照各自的隐私政策收集特定信息：</p>
+
+            <div class="data-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>第三方服务</th>
+                            <th>用途</th>
+                            <th>可能收集的信息</th>
+                            <th>收集目的</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AdSet 广告平台</strong><br><span style="font-size:12px;color:#6b7280;">（上海神蓍信息科技有限公司）</span></td>
+                            <td>在应用内展示广告</td>
+                            <td>设备标识符（如 <strong>IDFA</strong> / <strong>IDFV</strong>）、广告互动数据、粗略位置（基于IP）、设备型号与系统版本</td>
+                            <td>投放个性化或非个性化广告、广告效果衡量、频次控制</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Drive API</strong></td>
+                            <td>授权访问 Google Drive 中的文档，支持下载与备份上传</td>
+                            <td>OAuth 授权令牌、您在 Google Drive 中选择操作的文件元数据（文件名、文件类型）</td>
+                            <td>实现文件导入/导出功能，验证授权状态</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="font-size:13px;color:#9ca3af;margin-top:8px;">
+                * AdSet 广告平台收集的信息受其<a href="https://doc.shenshiads.com/SdkYszc.html" target="_blank" rel="noopener noreferrer" style="color:#4f6ef7;">隐私政策</a>约束。您可以在设备“设置”中重置广告标识符或开启“限制广告追踪”来管理相关权限。
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">☁️</span>iCloud 同步机制详解</h2>
+            <p>
+                BoardNotes 深度集成 Apple iCloud 生态系统，为您提供无缝的多设备同步体验。以下是该机制的关键细节：
+            </p>
+            <ul>
+                <li><strong>绑定方式：</strong>应用启动时自动检测设备当前登录的 iCloud 账户，并与之关联。无需手动输入任何凭证。</li>
+                <li><strong>数据存储位置：</strong>您的笔记数据存储在 Apple 为您分配的 iCloud 私有数据库中。该数据库与您的 Apple ID 绑定，其他用户（包括开发者）无法访问。</li>
+                <li><strong>同步范围：</strong>所有登录同一 Apple ID 且安装了 BoardNotes 的 iOS 设备，均可实时或近实时地同步笔记内容。</li>
+                <li><strong>离线支持：</strong>即使设备暂时离线，您仍可正常使用本应用。待网络恢复后，变更将自动同步至 iCloud 并分发到其他设备。</li>
+                <li><strong>账户变更：</strong>如果设备登出 iCloud 或更换 Apple ID，应用将无法访问原有同步数据。原数据仍保留在原 Apple ID 的 iCloud 存储中。</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">📢</span>广告与设备标识符</h2>
+            <p>
+                本应用通过集成第三方广告平台 <strong>AdSet</strong>（上海神蓍信息科技有限公司）来展示广告，以此支持应用的免费运营。AdSet 可能收集并使用您的<strong>设备标识符</strong>来投放相关广告。
+            </p>
+            <h3>涉及的设备标识符</h3>
+            <ul>
+                <li><strong>IDFA（广告标识符）：</strong>Apple 提供的用于广告用途的设备标识符。您可以在 iOS 设备的 <em>"设置" → "隐私与安全性" → "追踪"</em> 中重置此标识符，或关闭"允许 App 请求追踪"来禁止跨应用追踪。</li>
+                <li><strong>IDFV（供应商标识符）：</strong>同一开发者账号下的应用共享的标识符。主要用于频次控制和广告效果的基本衡量，不用于跨开发者的用户画像构建。</li>
+            </ul>
+            <h3>您的选择权</h3>
+            <p>
+                在首次启动本应用时，Apple 系统会代表我们向您弹窗请求<strong>跨应用追踪权限</strong>。您可以自由选择"允许"或"要求 App 不追踪"。无论您做出何种选择，本应用的核心功能（笔记编辑、iCloud 同步、Google Drive 导入导出）均不受任何影响。拒绝追踪仅会使得 AdSet 无法向您投放个性化广告，您仍会看到广告，但相关性可能较低。
+            </p>
+            <div class="highlight-box">
+                <strong>⚠️ 重要提示</strong>
+                AdSet 对其收集的数据拥有独立控制权。我们建议您仔细阅读 AdSet 的<a href="https://doc.shenshiads.com/SdkYszc.html" target="_blank" rel="noopener noreferrer" style="color:#92400e;font-weight:600;">隐私政策</a>以了解其数据处理方式。我们不会将您的笔记内容或 iCloud 数据提供给广告平台。
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔗</span>Google Drive 集成与数据授权</h2>
+            <p>
+                本应用集成了 <strong>Google Drive API</strong>，以便您能够从 Google Drive 导入 PDF 等文档到 BoardNotes 中进行标注，或将本地笔记备份上传至您的 Google Drive 存储空间。
+            </p>
+
+            <h3>授权机制</h3>
+            <ul>
+                <li>在您首次使用 Google Drive 相关功能时，系统将引导您通过 Google 官方 OAuth 2.0 流程进行授权。</li>
+                <li>授权过程中，您需要登录您的 Google 账户并明确同意 BoardNotes 访问您 Google Drive 中文件的权限。</li>
+                <li>我们请求的权限范围严格限定为：<strong>读取您选择或指定文件夹中的文件</strong>以及<strong>在您的 Google Drive 中创建备份文件</strong>。我们不会请求访问您 Google Drive 中其他无关文件的权限。</li>
+            </ul>
+
+            <h3>数据使用与存储</h3>
+            <ul>
+                <li><strong>下载：</strong>当您选择从 Google Drive 下载文档时，文件将被传输至您的设备本地存储，供您在 BoardNotes 中打开和编辑。我们不会在中间服务器上缓存或存储这些文件。</li>
+                <li><strong>备份上传：</strong>当您选择将笔记备份到 Google Drive 时，应用会在您的 Google Drive 中创建备份文件。备份内容直接由您的设备上传至 Google 服务器，不经过我们的服务器。</li>
+                <li><strong>令牌管理：</strong>应用会在设备本地安全存储 OAuth 刷新令牌，以维持授权状态。您可以在应用中随时撤销此授权，撤销后应用将删除本地存储的令牌并停止访问您的 Google Drive。</li>
+            </ul>
+
+            <div class="highlight-box info">
+                <strong>🔐 Google 数据保护</strong>
+                通过 Google Drive API 传输的所有数据均受到 Google 的加密保护。BoardNotes 对 Google Drive 的访问遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style="color:#3b82f6;">Google API 服务用户数据政策</a>，包括有限使用要求。
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🛡️</span>数据存储与安全</h2>
+            <p>我们采取合理的技术和组织措施来保护您的数据安全：</p>
+            <ul>
+                <li><strong>本地存储：</strong>笔记数据主要存储在您的设备本地文件系统中，受 iOS 沙盒机制和系统级加密保护。</li>
+                <li><strong>云端存储：</strong>iCloud 同步的数据由 Apple 的基础设施保护；Google Drive 备份由 Google 的安全机制保护。两种云端服务均采用业界标准的加密传输（TLS/HTTPS）。</li>
+                <li><strong>无服务器中转：</strong>我们<strong>不运营后端服务器</strong>来存储或处理您的笔记内容。所有数据传输均在您的设备与 Apple iCloud 或 Google Drive 之间直接进行。</li>
+                <li><strong>第三方 SDK 安全：</strong>我们审慎选择集成的第三方 SDK，并定期更新至最新版本以修复潜在安全漏洞。</li>
+            </ul>
+            <p>
+                尽管我们采取了上述措施，但没有任何一种电子存储或传输方法是100%安全的。我们无法保证绝对的安全性，但会持续努力保护您的信息。
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">👶</span>儿童隐私保护</h2>
+            <p>
+                本应用面向所有年龄段的用户。但我们<strong>不会有意收集</strong> 13 周岁以下（或您所在司法管辖区规定的等效年龄）儿童的个人信息。如果我们发现无意中收集了儿童的个人信息，将立即采取措施删除相关数据。
+            </p>
+            <p>
+                如果您是家长或监护人，发现您的孩子未经您同意向我们提供了个人信息，请通过下方联系方式与我们取得联系，我们将及时处理。
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">⚖️</span>您的权利</h2>
+            <p>根据适用的数据保护法律，您享有以下权利：</p>
+            <ul>
+                <li><strong>访问与导出：</strong>您可以随时通过 Google Drive 备份功能导出您的笔记数据，或通过 iTunes/Finder 文件共享获取本地文件。</li>
+                <li><strong>删除数据：</strong>您可以在应用内直接删除笔记，或通过 iOS 系统设置删除应用数据。iCloud 中的同步数据可通过 Apple ID 的 iCloud 管理面板删除。</li>
+                <li><strong>撤销授权：</strong>您可以在应用设置中随时撤销 Google Drive 的访问授权；iCloud 同步可在设备 iCloud 设置中关闭。</li>
+                <li><strong>限制广告追踪：</strong>通过 iOS 系统隐私设置管理广告追踪权限（详见上文“广告与设备标识符”章节）。</li>
+                <li><strong>投诉权：</strong>如果您对我们的数据处理方式有异议，您有权向您所在地的数据保护监管机构提出投诉。</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔄</span>隐私政策更新</h2>
+            <p>
+                我们可能会不时更新本隐私政策以反映实践的变化或出于法律合规的需要。更新后的政策将通过以下方式通知您：
+            </p>
+            <ul>
+                <li>在应用内显著位置展示更新提示；</li>
+                <li>更新本页面顶部的“最后更新日期”；</li>
+                <li>对于重大变更，我们可能会通过应用内弹窗或其他更显著的方式通知您。</li>
+            </ul>
+            <p>
+                我们建议您定期查阅本隐私政策，以了解最新的隐私实践。在政策更新后继续使用本应用，即表示您同意更新后的条款。
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔗</span>第三方服务隐私政策</h2>
+            <p>以下是本应用集成的第三方服务的官方隐私政策链接，供您参考：</p>
+            <ul>
+                <li><strong>AdSet 广告平台：</strong><a href="https://doc.shenshiads.com/SdkYszc.html" target="_blank" rel="noopener noreferrer">https://doc.shenshiads.com/SdkYszc.html</a></li>
+                <li><strong>Apple iCloud：</strong><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/privacy/</a></li>
+                <li><strong>Google Drive / Google API：</strong><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+            </ul>
+            <p style="font-size:13px;color:#9ca3af;">
+                请注意，第三方隐私政策可能随时更新，请以各平台官网公布的最新版本为准。
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">📧</span>联系我们</h2>
+            <p>
+                如果您对本隐私政策有任何疑问、意见或投诉，或者希望行使您的数据权利，请通过以下方式与我们联系：
+            </p>
+            <div style="background:#f9fafb;border-radius:8px;padding:16px 20px;margin-top:12px;">
+                <p style="margin-bottom:6px;"><strong>📧 电子邮件：</strong><a href="mailto:boardnotes@qq.com" style="color:#4f6ef7;">boardnotes@qq.com</a></p>
+                <p style="margin-bottom:0;font-size:13px;color:#9ca3af;">我们将在收到您的邮件后尽快回复，通常不超过15个工作日。</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>
+                © 2026 BoardNotes. 保留所有权利。
+                <span class="divider">|</span>
+                本隐私政策以中文撰写，可能提供其他语言版本以供参考。
+            </p>
+            <p style="margin-top:6px;">
+                如中文版本与其他语言版本存在歧义，以<strong>中文版本</strong>为准。
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

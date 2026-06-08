@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - BoardNotes</title>
+    <style>
+        :root {
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-muted: #6b7280;
+            --accent: #4f6ef7;
+            --accent-light: #eef1ff;
+            --border: #e5e7eb;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --line-height: 1.75;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: var(--line-height);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4f6ef7 0%, #6d8cf8 30%, #a78bfa 60%, #4f6ef7 100%);
+            background-size: 200% 100%;
+            animation: gradientShift 6s ease-in-out infinite;
+            z-index: 100;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px 0 60px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 48px 32px 36px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 0 0 6px 6px;
+        }
+
+        .app-icon {
+            display: inline-block;
+            width: 72px;
+            height: 72px;
+            background: var(--accent-light);
+            border-radius: 18px;
+            margin-bottom: 20px;
+            line-height: 72px;
+            font-size: 36px;
+            box-shadow: 0 4px 12px rgba(79, 110, 247, 0.18);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .header .meta {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 6px 16px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            padding: 36px 32px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .content-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .content-card h2 {
+            font-size: 20px;
+            font-weight: 650;
+            color: #111827;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f3f4f6;
+            letter-spacing: -0.2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-card h2 .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--accent-light);
+            font-size: 17px;
+            flex-shrink: 0;
+        }
+
+        .content-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            letter-spacing: -0.1px;
+        }
+
+        .content-card p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .content-card ul, .content-card ol {
+            margin: 8px 0 18px 4px;
+            padding-left: 20px;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .content-card ul li, .content-card ol li {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        .content-card ul li::marker {
+            color: var(--accent);
+        }
+
+        .highlight-box {
+            background: #fefce8;
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 14px 18px;
+            margin: 18px 0;
+            font-size: 14px;
+            color: #92400e;
+            line-height: 1.7;
+        }
+
+        .highlight-box.info {
+            background: #eff6ff;
+            border-left-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .highlight-box.safe {
+            background: #f0fdf4;
+            border-left-color: #22c55e;
+            color: #166534;
+        }
+
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+        }
+
+        .data-table-wrap {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 500px;
+        }
+
+        table thead th {
+            background: #f9fafb;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+            font-size: 13px;
+            letter-spacing: 0.2px;
+            border-bottom: 2px solid var(--border);
+            white-space: nowrap;
+        }
+
+        table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f3f4f6;
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        table tbody tr:hover {
+            background: #fafbfc;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .badge-green { background: #dcfce7; color: #166534; }
+        .badge-yellow { background: #fef3c7; color: #92400e; }
+        .badge-blue { background: #dbeafe; color: #1e40af; }
+        .badge-gray { background: #f3f4f6; color: #374151; }
+
+        .footer {
+            text-align: center;
+            padding: 28px 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: #3b5de7;
+            text-decoration: underline;
+        }
+
+        .footer .divider {
+            display: inline-block;
+            margin: 0 8px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 10px; }
+            .container { padding: 10px 0 40px; }
+            .header { padding: 32px 20px 28px; }
+            .header h1 { font-size: 24px; }
+            .content-card { padding: 24px 18px; }
+            .content-card h2 { font-size: 18px; }
+            .content-card p, .content-card ul, .content-card ol { font-size: 14px; }
+            table { font-size: 12px; }
+            table thead th, table tbody td { padding: 10px 12px; }
+        }
+
+        @media print {
+            body { background: #fff; padding: 0; }
+            body::before { display: none; }
+            .content-card { box-shadow: none; border: 1px solid #e5e7eb; break-inside: avoid; }
+            .content-card:hover { box-shadow: none; }
+            .header { box-shadow: none; border: 1px solid #e5e7eb; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="app-icon">📝</div>
+            <h1>BoardNotes Privacy Policy</h1>
+            <p class="subtitle">Handwriting Note App · Privacy First</p>
+        </header>
+
+        <section class="content-card">
+            <h2><span class="icon">📋</span>Introduction</h2>
+            <p>Thank you for using <strong>BoardNotes</strong> (hereinafter referred to as "the App" or "we"). We deeply understand the importance of personal privacy and are committed to protecting your information. This Privacy Policy is designed to clearly explain how we collect, use, store, and protect your data.</p>
+            <p>Please read this Privacy Policy carefully. By using the App, you signify that you fully understand and agree to all terms described in this policy. If you do not agree with any part of this policy, please discontinue use of the App.</p>
+            <div class="highlight-box info">
+                <strong>💡 Core Commitment</strong>
+                BoardNotes is designed with a <strong>data minimization</strong> philosophy. We do not require you to register an account or provide a phone number or email address. Your note data is always under your control.
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔍</span>Information We Collect</h2>
+            <p>The App follows the principle of data minimization. Below is a detailed list of what we collect, what we do not collect, and what may be collected by third parties:</p>
+
+            <h3>1. Information We Do NOT Collect</h3>
+            <ul>
+                <li><strong>Personal Identifiable Information:</strong> We do not collect your phone number, email address, name, ID number, home address, or any other information that can directly or indirectly identify you.</li>
+                <li><strong>Account Registration Information:</strong> The App does not require account registration and has no account/password system, so no such information is collected.</li>
+                <li><strong>Note Content:</strong> All of your handwritten notes, imported documents, annotations, etc., are stored locally on your device and in your personal iCloud account. We <strong>do not</strong> upload these contents to our servers and cannot access them.</li>
+                <li><strong>Location Information:</strong> We do not collect your precise or approximate geographic location.</li>
+                <li><strong>Contacts and Photo Library:</strong> Unless you actively choose to import an image into a note (in which case only the selected image is read via system-level interface with your authorization), we do not scan or collect your contacts or photo library content.</li>
+            </ul>
+
+            <h3>2. Automatically Bound Information — iCloud Account</h3>
+            <p>The App automatically binds to the <strong>iCloud account</strong> logged in on your device. This binding is solely for data synchronization across multiple devices via Apple's iCloud sync service. Specifically:</p>
+            <ul>
+                <li>We use Apple's <strong>iCloud Drive</strong> or <strong>CloudKit</strong> framework to store your note data in your personal iCloud storage space.</li>
+                <li>Notes are automatically synced between iOS devices signed in to the <strong>same iCloud account</strong>. This process is entirely handled by Apple's iCloud infrastructure; we have no access to data in transit or stored in iCloud.</li>
+                <li>We may obtain an <strong>anonymous identifier</strong> associated with the iCloud account (such as a CloudKit user record ID), which is used solely to distinguish different sync containers and is not linked to your personal identity.</li>
+            </ul>
+            <div class="highlight-box safe">
+                <strong>🔒 Your Data is Protected by Apple iCloud</strong>
+                iCloud Sync employs end-to-end encryption where supported. Your note data is protected by Apple's security mechanisms during transmission and cloud storage. As the developer, we cannot decrypt or view your iCloud data.
+            </div>
+
+            <h3>3. Information Potentially Collected by Third Parties</h3>
+            <p>The App integrates the following third-party services, which may collect certain information in accordance with their own privacy policies:</p>
+            <div class="data-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Third-Party Service</th>
+                            <th>Purpose</th>
+                            <th>Information Potentially Collected</th>
+                            <th>Purpose of Collection</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AdSet Advertising Platform</strong><br><span style="font-size:12px;color:#6b7280;">(Shanghai Shenshi Information Technology Co., Ltd.)</span></td>
+                            <td>Display advertisements within the app</td>
+                            <td>Device identifiers (such as <strong>IDFA</strong> / <strong>IDFV</strong>), ad interaction data, coarse location (based on IP), device model and OS version</td>
+                            <td>Deliver personalized or non-personalized ads, ad measurement, frequency capping</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Drive API</strong></td>
+                            <td>Authorize access to documents in Google Drive for download and backup upload</td>
+                            <td>OAuth authorization tokens, metadata of files you choose to operate on in Google Drive (file name, file type)</td>
+                            <td>Enable file import/export functionality, verify authorization status</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:13px;color:#9ca3af;margin-top:8px;">
+                * Information collected by the AdSet platform is governed by its <a href="https://doc.shenshiads.com/SdkYszc.html" target="_blank" rel="noopener noreferrer" style="color:#4f6ef7;">Privacy Policy</a>. You can manage relevant permissions by resetting your advertising identifier or enabling "Limit Ad Tracking" in your device Settings.
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">☁️</span>iCloud Sync Details</h2>
+            <p>BoardNotes deeply integrates with the Apple iCloud ecosystem to provide a seamless multi-device sync experience. Key details of this mechanism are as follows:</p>
+            <ul>
+                <li><strong>Binding Method:</strong> The App automatically detects the iCloud account currently logged in on the device and associates with it upon launch. No manual credential entry is required.</li>
+                <li><strong>Data Storage Location:</strong> Your note data is stored in the iCloud private database assigned to you by Apple. This database is bound to your Apple ID and cannot be accessed by other users (including the developer).</li>
+                <li><strong>Sync Scope:</strong> All iOS devices signed in with the same Apple ID and with BoardNotes installed will sync notes in near real-time.</li>
+                <li><strong>Offline Support:</strong> You can still use the App normally even when the device is temporarily offline. Changes will automatically sync to iCloud and distribute to other devices once the network is restored.</li>
+                <li><strong>Account Changes:</strong> If the device signs out of iCloud or switches to a different Apple ID, the App will no longer be able to access the previously synced data. The original data remains in the iCloud storage of the original Apple ID.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">📢</span>Advertising & Device Identifiers</h2>
+            <p>The App integrates the third-party advertising platform <strong>AdSet</strong> (Shanghai Shenshi Information Technology Co., Ltd.) to display ads, which supports the free operation of the App. AdSet may collect and use your <strong>device identifiers</strong> to serve relevant advertisements.</p>
+            <h3>Device Identifiers Involved</h3>
+            <ul>
+                <li><strong>IDFA (Identifier for Advertisers):</strong> An Apple-provided device identifier for advertising purposes. You can reset this identifier or disable "Allow Apps to Request to Track" in your iOS device's <em>Settings → Privacy & Security → Tracking</em> to prevent cross-app tracking.</li>
+                <li><strong>IDFV (Identifier for Vendors):</strong> An identifier shared among apps from the same developer account. It is mainly used for frequency capping and basic ad measurement, and is not used for cross-developer user profiling.</li>
+            </ul>
+            <h3>Your Choices</h3>
+            <p>When you first launch the App, the Apple system will display a prompt on our behalf requesting <strong>cross-app tracking permission</strong>. You are free to choose "Allow" or "Ask App Not to Track". Regardless of your choice, the core functions of the App (note editing, iCloud sync, Google Drive import/export) will not be affected in any way. Opting out of tracking only prevents AdSet from delivering personalized ads to you; you will still see ads, but they may be less relevant.</p>
+            <div class="highlight-box">
+                <strong>⚠️ Important Notice</strong>
+                AdSet has independent control over the data it collects. We recommend that you carefully review AdSet's <a href="https://doc.shenshiads.com/SdkYszc.html" target="_blank" rel="noopener noreferrer" style="color:#92400e;font-weight:600;">Privacy Policy</a> to understand its data processing practices. We do not provide your note content or iCloud data to the advertising platform.
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔗</span>Google Drive Integration & Data Authorization</h2>
+            <p>The App integrates the <strong>Google Drive API</strong> to allow you to import documents such as PDFs from Google Drive into BoardNotes for annotation, or to back up local notes to your Google Drive storage.</p>
+            <h3>Authorization Mechanism</h3>
+            <ul>
+                <li>When you first use Google Drive-related features, the system will guide you through Google's official OAuth 2.0 flow for authorization.</li>
+                <li>During authorization, you will need to sign in to your Google account and explicitly consent to BoardNotes accessing files in your Google Drive.</li>
+                <li>The scope of permissions we request is strictly limited to: <strong>reading files in the folder you select or specify</strong> and <strong>creating backup files in your Google Drive</strong>. We do not request permission to access other unrelated files in your Google Drive.</li>
+            </ul>
+            <h3>Data Usage & Storage</h3>
+            <ul>
+                <li><strong>Download:</strong> When you choose to download a document from Google Drive, the file is transferred to your device's local storage for you to open and edit in BoardNotes. We do not cache or store these files on any intermediate server.</li>
+                <li><strong>Backup Upload:</strong> When you choose to back up notes to Google Drive, the App creates backup files in your Google Drive. The backup content is uploaded directly from your device to Google's servers without passing through our servers.</li>
+                <li><strong>Token Management:</strong> The App securely stores OAuth refresh tokens locally on the device to maintain authorization status. You can revoke this authorization at any time within the App; upon revocation, the App will delete the locally stored token and stop accessing your Google Drive.</li>
+            </ul>
+            <div class="highlight-box info">
+                <strong>🔐 Google Data Protection</strong>
+                All data transferred via the Google Drive API is protected by Google's encryption. BoardNotes' use of Google Drive complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style="color:#3b82f6;">Google API Services User Data Policy</a>, including the limited use requirements.
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🛡️</span>Data Storage & Security</h2>
+            <p>We implement reasonable technical and organizational measures to protect your data security:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> Note data is primarily stored in your device's local file system, protected by iOS sandboxing and system-level encryption.</li>
+                <li><strong>Cloud Storage:</strong> Data synced via iCloud is protected by Apple's infrastructure; Google Drive backups are protected by Google's security mechanisms. Both cloud services utilize industry-standard encryption in transit (TLS/HTTPS).</li>
+                <li><strong>No Server Intermediary:</strong> We <strong>do not operate backend servers</strong> to store or process your note content. All data transfers occur directly between your device and Apple iCloud or Google Drive.</li>
+                <li><strong>Third-Party SDK Security:</strong> We carefully select integrated third-party SDKs and regularly update them to the latest versions to address potential security vulnerabilities.</li>
+            </ul>
+            <p>Despite the measures we take, no method of electronic storage or transmission is 100% secure. We cannot guarantee absolute security, but we continuously strive to protect your information.</p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">👶</span>Children's Privacy</h2>
+            <p>This App is intended for users of all ages. However, we <strong>do not knowingly collect</strong> personal information from children under the age of 13 (or the equivalent age in your jurisdiction). If we discover that we have inadvertently collected personal information from a child, we will take immediate steps to delete the data.</p>
+            <p>If you are a parent or guardian and you become aware that your child has provided us with personal information without your consent, please contact us via the information below so that we can take prompt action.</p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">⚖️</span>Your Rights</h2>
+            <p>Under applicable data protection laws, you have the following rights:</p>
+            <ul>
+                <li><strong>Access & Export:</strong> You can export your note data at any time using the Google Drive backup feature, or obtain local files via iTunes/Finder file sharing.</li>
+                <li><strong>Data Deletion:</strong> You can delete notes directly within the App, or delete app data through iOS system settings. Synced data in iCloud can be deleted via the iCloud management panel of your Apple ID.</li>
+                <li><strong>Revoke Authorization:</strong> You can revoke Google Drive access authorization at any time in the App settings; iCloud sync can be turned off in your device's iCloud settings.</li>
+                <li><strong>Limit Ad Tracking:</strong> Manage ad tracking permissions through iOS system privacy settings (see "Advertising & Device Identifiers" section above).</li>
+                <li><strong>Right to Complain:</strong> If you have concerns about our data processing practices, you have the right to lodge a complaint with your local data protection supervisory authority.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔄</span>Updates to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal compliance reasons. The updated policy will be notified to you through the following methods:</p>
+            <ul>
+                <li>Displaying an update notice prominently within the App;</li>
+                <li>Updating the "Last Updated" date at the top of this page;</li>
+                <li>For material changes, we may notify you via an in-app pop-up or other more prominent means.</li>
+            </ul>
+            <p>We encourage you to review this Privacy Policy periodically to stay informed about our latest privacy practices. Continued use of the App after any updates constitutes your acceptance of the revised terms.</p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">🔗</span>Third-Party Privacy Policies</h2>
+            <p>Below are links to the official privacy policies of the third-party services integrated into the App, for your reference:</p>
+            <ul>
+                <li><strong>AdSet Advertising Platform:</strong> <a href="https://doc.shenshiads.com/SdkYszc.html" target="_blank" rel="noopener noreferrer">https://doc.shenshiads.com/SdkYszc.html</a></li>
+                <li><strong>Apple iCloud:</strong> <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/privacy/</a></li>
+                <li><strong>Google Drive / Google API:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+            </ul>
+            <p style="font-size:13px;color:#9ca3af;">Please note that third-party privacy policies may be updated at any time. Please refer to the latest versions published on each platform's official website.</p>
+        </section>
+
+        <section class="content-card">
+            <h2><span class="icon">📧</span>Contact Us</h2>
+            <p>If you have any questions, comments, or complaints regarding this Privacy Policy, or wish to exercise your data rights, please contact us at:</p>
+            <div style="background:#f9fafb;border-radius:8px;padding:16px 20px;margin-top:12px;">
+                <p style="margin-bottom:6px;"><strong>📧 Email:</strong> <a href="mailto:boardnotes@qq.com" style="color:#4f6ef7;">boardnotes@qq.com</a></p>
+                <p style="margin-bottom:0;font-size:13px;color:#9ca3af;">We will respond to your email as soon as possible, typically within 15 business days.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 BoardNotes. All rights reserved. <span class="divider">|</span> This privacy policy is written in English and may be provided in other languages for reference.</p>
+            <p style="margin-top:6px;">In case of any discrepancies between language versions, the <strong>English version</strong> shall prevail.</p>
+        </footer>
+    </div>
+</body>
+</html>
